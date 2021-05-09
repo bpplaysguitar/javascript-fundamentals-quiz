@@ -14,7 +14,13 @@ function getHighScores() {
   console.log(storedScore);
 
   for (i = 0; i < storedScore.length; i++) {
-    highScoresListEl.appendChild(document.createElement("li"));
+    let liEl = document.createElement("li");
+        if (parseInt(i) % 2 === 0){
+            liEl.setAttribute("style", "background-color: var(--high-score-list-col-1)");
+        } else if (parseInt(i) % 2 !== 0) {
+            liEl.setAttribute("style", "background-color: var(--high-score-list-col-2)");
+        }
+    highScoresListEl.appendChild(liEl)
     highScoresListEl.children[i].textContent = (i + 1) + ". " + storedScore[i]["initials"] + " score: " + storedScore[i]["score"];
   }
 }

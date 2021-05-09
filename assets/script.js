@@ -23,7 +23,7 @@ if (JSON.parse(localStorage.getItem("scoreSet"))=== null) {
 }
 
 let highestScore = JSON.parse(localStorage.getItem("scoreSet"));
-
+let questionNumber = 0;
 
 
 // Questions
@@ -80,11 +80,14 @@ let questions = [
 
 //start the countdown timer
 function countDown() {
-  setInterval(function () {
+  let interval = setInterval(function () {
     if (timeLeft <= 0) {
       timeLeft = 0;
       gameOver();
-      clearInterval((timeLeft = 0));
+      clearInterval(interval);
+    }
+    if (questionNumber >= 5) {
+      clearInterval(interval);
     }
     timeLeftDisplay.innerHTML = timeLeft;
     timeLeft -= 1;
@@ -237,6 +240,7 @@ function rightAnswer() {
   questionContainer.classList.add("correct");
   setTimeout(() => {
     questionContainer.classList.remove("correct");
+    questionNumber++;
   }, 1000);
 }
 
@@ -246,6 +250,7 @@ function wrongAnswer() {
   questionContainer.classList.add("incorrect");
   setTimeout(() => {
     questionContainer.classList.remove("incorrect");
+    questionNumber++;
   }, 1000);
 }
 

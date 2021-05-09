@@ -9,8 +9,13 @@
 :root {
   --correct:rgb(0, 156, 0);
   --incorrect:rgb(156, 0, 0);
-  --high-score:rgb(0, 11, 165);
+  --high-score:#000ba5;
   --high-score-hover:rgb(56, 29, 29);
+  --choice-btn:rgb(12, 150, 64);
+  --high-score-list-col-1:hotpink;
+  --high-score-list-col-2: rgb(252, 152, 202);
+  --container-bg: #fff;
+  --body-bg: #aaa;
 }
 
 body {
@@ -19,6 +24,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  background-color: var(--body-bg);
 }
 
 .container {
@@ -28,19 +34,23 @@ body {
   height: 400px;
   width:60%;
   max-width: 80%;
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 10px;
+  background-color:var(--container-bg);
+  border-radius: 30px;
+  padding: 40px;
   transform: scale(1.5);
   border: 5px solid black;
   align-items: center;
+  text-align: center;
+  box-shadow: 3px 4px 4px rgb(53, 53, 53);
+
 }
 
 .btn {
-  background-color: rgb(64, 214, 26);
+  background-color:var(--choice-btn);
   border-radius: 5px;
   padding:5px 10px;
   outline: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -107,13 +117,43 @@ header h1 {
   transition: .2s all ease;
 }
 
+#play-again {
+  position:absolute;
+  left:5%;
+  background-color: var(--high-score);
+  padding: 15px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+#play-again:hover {
+  background-color: var(--high-score-hover);
+  transition: .2s all ease;
+}
+
+#play-again-score-screen {
+  background-color: var(--high-score);
+  padding: 15px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 30px;
+}
+
+#play-again-score-screen:hover {
+  background-color: var(--high-score-hover);
+  transition: .2s all ease;
+}
+
 #timer {
   position:absolute;
   right:5%;
   background-color: var(--high-score);
   padding: 15px 20px;
   border-radius: 15px;
-  cursor: pointer;
   text-decoration: none;
   color: #fff;
 }
@@ -149,6 +189,48 @@ header h1 {
 
 #high-scores-container {
   display: flex;
+  width: 30%;
   flex-direction: column;
   margin: auto;
+  font-size: 1.75rem;
+  text-align: center;
+  background-color: var(--body-bg);
+  justify-content: center;
+  align-items: center;
+}
+
+#high-scores-container h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px grey;
+}
+
+#high-scores-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  margin: 20px;
+  border: 5px solid black;
+  border-radius: 20px;
+  padding: 40px;
+  font-weight: 500;
+  background-color: var(--container-bg);
+}
+
+#high-scores-list li {
+  padding: 10px;
+  color: white;
+}
+
+#label {
+  margin-right:5px;
+}
+
+#submit-btn {
+  cursor: pointer;
+  background-color: var(--choice-btn);
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 10px;
 }
