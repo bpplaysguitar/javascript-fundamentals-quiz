@@ -314,9 +314,17 @@ header h1 {
     font-size:1.3rem;
   }
 
-@media screen and (min-width:1050px){ 
+  .btn {
+    width: 100%;
+  }
+
+@media screen and (min-width:1300px) { 
     header h1 {
       font-size:2rem;
+  }
+
+  .btn {
+    width: auto;
   }
 }
 
