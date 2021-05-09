@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
-  font-family: ;
+  font-family: "Montserrat";
   line-height: 1.5em;
 }
 
 :root {
   --correct:rgb(0, 156, 0);
   --incorrect:rgb(156, 0, 0);
+  --high-score:rgb(0, 11, 165);
+  --high-score-hover:rgb(56, 29, 29);
 }
 
 body {
@@ -17,28 +21,19 @@ body {
   width: 100vw;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 7px;
-}
-
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: 400px;
-  width:800px;
+  width:60%;
   max-width: 80%;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 10px;
   transform: scale(1.5);
+  border: 5px solid black;
+  align-items: center;
 }
 
 .btn {
@@ -62,21 +57,23 @@ h1 {
   font-weight: bold;
   padding:10px 20px;
   font-size: 1.5rem;
+  margin: 20px;
 }
 
 .controls {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-}
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
 
 .hide {
   display: none;
 }
 
 header {
+  display: flex;
   width: 100%;
   position: absolute;
   top:0;
@@ -88,42 +85,65 @@ header {
 }
 
 header h1 {
-  font-size: 2em;
+  font-size: 2rem;
+  color: #fff;
+  margin: auto;
   font-weight: 600;
 }
 
-#btn-highscores {
-  height: 40px;
-  border: 2px solid black;
+#high-score-link {
+  position:absolute;
+  left:5%;
+  background-color: var(--high-score);
+  padding: 15px 20px;
   border-radius: 15px;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
-#btn-highscores:hover {
-  background-color: blueviolet;
+#high-score-link:hover {
+  background-color: var(--high-score-hover);
   transition: .2s all ease;
+}
+
+#timer {
+  position:absolute;
+  right:5%;
+  background-color: var(--high-score);
+  padding: 15px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+#answer-buttons {
+  margin: 20px;
 }
 
 .correct:after {
   content: "CORRECT";
-  position: relative;
+  bottom: 20px;
+  right: 30px;
   display: flex;
+  position: absolute;
   font-size: 2rem;
   color: var(--correct);
-  top: 80px;
   justify-content: center;
-  transform: 3s ease all;
+  font-weight: 600;
 }
 
 .incorrect:after {
   content: "INCORRECT";
-  position: relative;
+  bottom: 20px;
+  right: 30px;
   display: flex;
+  position: absolute;
   font-size: 2rem;
   color: var(--incorrect);
-  top: 80px;
   justify-content: center;
-  transform: 3s ease all;
+  font-weight: 600;
 }
 
 
