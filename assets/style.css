@@ -94,7 +94,6 @@ header h1 {
 
 /* main part of the game  */
 .container {
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,6 +120,7 @@ header h1 {
   font-size: 1.05rem;
   box-shadow: 3px 2px 2px grey;
   color: hsl(27, 66%, 98%);
+  width: 80%;
 }
 
 .btn:hover {
@@ -135,6 +135,7 @@ header h1 {
   padding:10px 20px;
   font-size: 1.5rem;
   margin: 20px;
+  width:70%;
 }
 
 .controls {
@@ -285,7 +286,23 @@ header h1 {
 @media screen and (max-width:810px){
 
   header {
-    height: 170px;
+    height: 120px;
+    align-items: flex-end;
+  }
+
+  #play-again {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+
+  #timer {
+    margin-bottom: 15px;
+    padding:10px;
+  }
+
+  #high-score-link {
+  margin-bottom: 15px;
+  padding: 10px;
   }
 
   header h1 {
@@ -294,8 +311,13 @@ header h1 {
    padding:12px;
   }
 
-  .btn {
+  .container {
     width: 100%;
+    padding:5px;
+  }
+
+  .btn {
+    width: 80%;
   }
 
   #high-scores-container {
@@ -314,7 +336,7 @@ header h1 {
   }
 
   .btn {
-    width: 100%;
+    width: 70%;
   }
 
 @media screen and (min-width:1300px) { 
@@ -322,9 +344,6 @@ header h1 {
       font-size:2rem;
   }
 
-  .btn {
-    width: auto;
-  }
 }
 
 }
