@@ -8,7 +8,7 @@
 
 :root {
   --correct:hsl(120, 43%, 24%);
-  --incorrect:hsl(0, 53%, 69%);
+  --incorrect:hsl(0, 53%, 59%);
   --choice-btn:hsl(75, 10%, 40%);
   --choice-btn-hv:hsl(75, 10%, 35%);
   --high-score-list-col-1:#b7b7a4;
