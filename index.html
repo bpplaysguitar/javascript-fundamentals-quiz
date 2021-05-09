@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  dfnz
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Fundamentals Quiz</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <button id="btn-highscores" href="">View High Scores</button>
+      <h1>JavaScript Fundamentals Quiz</h1>
+      <div id="timer">
+        <p>Time: <span id="time-left">75</span></p>
+      </div>
+    </header>
+    <div class="container">
+      <main id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons">
+          <button class="btn" id="choice-btn-1">Choice 1</button>
+          <button class="btn" id="choice-btn-2">Choice 2</button>
+          <button class="btn" id="choice-btn-3">Choice 3</button>
+          <button class="btn" id="choice-btn-4">Choice 4</button>
+        </div>
+      </main>
+
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+      </div>
+
+      <div class="welcome-message"></div>
+      <form id = "score-form">
+        <label>Enter initials</label>
+        <input type="text" id="user-initials">
+        <button id ="submit-btn">Submit</button>
+      </form>
+        <a href="./index.html" id="play-again">Play again</a>
+      </div>  
+      </div>
+    </div>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  font-family: ;
+  line-height: 1.5em;
+}
+
+:root {
+  --correct:rgb(0, 156, 0);
+  --incorrect:rgb(156, 0, 0);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color:; 
+}
+
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 7px;
+}
+
+.container {
+  width:800px;
+  max-width: 80%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  transform: scale(1.5);
+}
+
+
+.btn {
+  background-color: rgb(64, 214, 26);
+  border-radius: 5px;
+  padding:5px 10px;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: #000;
+  transform: scale(1.03);
+  transform: .3s all ease;
+}
+
+.btn-disabled {
+  pointer-events: none;
+}
+
+.start-btn {
+  font-weight: bold;
+  padding:10px 20px;
+  font-size: 1.5rem;
+}
+
+
+.controls {
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.hide {
+  display: none;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top:0;
+  height: 100px;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+#btn-highscores {
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#btn-highscores:hover {
+  background-color: blueviolet;
+  transition: .2s all ease;
+}
+
+.correct:after {
+  content: "CORRECT";
+  position: relative;
+  display: flex;
+  font-size: 2rem;
+  color: var(--correct);
+  top: 80px;
+  justify-content: center;
+  transform: 3s ease all;
+}
+
+.incorrect:after {
+  content: "INCORRECT";
+  position: relative;
+  display: flex;
+  font-size: 2rem;
+  color: var(--incorrect);
+  top: 80px;
+  justify-content: center;
+  transform: 3s ease all;
+}
+
