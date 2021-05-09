@@ -50,7 +50,7 @@ let questions = [
 
   {
     question:
-      "A very useful too used during development and debugging for printing content to the debugger is _______.",
+      "A very useful tool used during development and debugging for printing content to the debugger is _______.",
     choice1: "JavaScript",
     choice2: "console.log",
     choice3: "terminal / bash",
