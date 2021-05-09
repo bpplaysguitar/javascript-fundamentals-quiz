@@ -277,6 +277,8 @@ gameOverMessage = document.querySelector(".game-over-message")
 function gameOver() {
   timeLeft = 0;
   gameOverMessage.classList.remove("hide")
+  answerButtons.classList.add("hide")
+  questionContainer.classList.add("hide")
   
 }
 
