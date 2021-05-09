@@ -13,10 +13,18 @@ let welcomeMessage =
   "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!";
 let submitButton = document.getElementById("submit-btn")
 let userInitialsEl = document.getElementById("user-initials")
-
-
+let score = 0;
+let scoreForm = document.getElementById("score-form");
 
 document.querySelector(".welcome-message").innerHTML = welcomeMessage;
+
+if (JSON.parse(localStorage.getItem("scoreSet"))=== null) {
+  localStorage.setItem("scoreSet", JSON.stringify([]));
+}
+
+let highestScore = JSON.parse(localStorage.getItem("scoreSet"));
+
+
 
 // Questions
 
@@ -74,38 +82,14 @@ let questions = [
 function countDown() {
   setInterval(function () {
     if (timeLeft <= 0) {
+      timeLeft = 0;
+      gameOver();
       clearInterval((timeLeft = 0));
     }
     timeLeftDisplay.innerHTML = timeLeft;
     timeLeft -= 1;
   }, 1000);
 }
-
-// var selectedChoice;
-
-// // keep track of question number
-// let questionNumber = 0;
-
-// function getBtnValue(event) {
-//   let target = event.target;
-//   selectedChoice = target.innerText;
-//   console.log(selectedChoice);
-
-
-//   let correctAnswer = questions.question.answer.innerText
-//     console.log(correctAnswer);
-  // check if answer is correct
-    // if question[questionNumber].answer === selectedChoice
-      // rightAnswer();
-    // else
-      // wrongAnswer();
-  
-  // questionNumber++
-  // getNextQuestion();
-// }
-
-// answerButtons.addEventListener("click", getBtnValue);
-// console.log(selectedChoice);
 
 // Get question 1
 function getQuestion1() {
@@ -155,7 +139,7 @@ function getQuestion2() {
     choiceBtn3.addEventListener("click", getQuestion3);
     choiceBtn4.addEventListener("click", rightAnswer);
     choiceBtn4.addEventListener("click", getQuestion3);
-  }, 2000);
+  }, 1000);
 }
 
 // Get question 3
@@ -185,7 +169,7 @@ function getQuestion3() {
     choiceBtn3.addEventListener("click", getQuestion4);
     choiceBtn4.addEventListener("click", wrongAnswer);
     choiceBtn4.addEventListener("click", getQuestion4);
-  }, 2000);
+  }, 1000);
 }
 
 // Get question 4
@@ -248,7 +232,6 @@ function getQuestion5() {
   }, 1000);
 }
 
-
 function rightAnswer() {
   // console.log("right answer");
   questionContainer.classList.add("correct");
@@ -267,12 +250,12 @@ function wrongAnswer() {
 }
 
 function getResult() {
-  questionContainer.innerText = "Your score = " + timeLeft;
-  timeLeft = timeLeft
+  score = timeLeft;
+  questionContainer.innerText = "Your score = " + score;
+  scoreForm.classList.remove("hide");
   timeLeftDisplay.classList.add("hide");
-  console.log(timeLeft);
+  console.log(score);
 }
-
 
 // Start game
 function startGame() {
@@ -284,11 +267,24 @@ function startGame() {
   getQuestion1();
 }
 
+gameOverMessage = document.querySelector(".game-over-message")
+
+function gameOver() {
+  timeLeft = 0;
+  gameOverMessage.classList.remove("hide")
+  
+}
+
 function enterScore(event) {
   event.preventDefault()
-  let userInitials = userInitialsEl.value
-  localStorage.setItem("score", timeLeft)
-  localStorage.setItem("initials", userInitials)
+  let userInitials = userInitialsEl.value;
+  let scoreObject = {
+    "initials": userInitials,
+    "score": score
+  };
+  highestScore.push(scoreObject);
+  localStorage.setItem("scoreSet", JSON.stringify(highestScore));
+  window.location.href = "scores.html";
 }
 
 //Start button starts calls startGame

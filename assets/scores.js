@@ -1,0 +1,22 @@
+let highScores = document.getElementById("high-scores-section")
+let highScoresListEl = document.getElementById("high-scores-list")
+
+function getHighScores() {
+  let storage = window.localStorage;
+  if (JSON.parse(storage.getItem("scoreSet")) === null) {
+    localStorage.setItem("scoreSet", JSON.stringify([]));
+  }
+  let storedScore = JSON.parse(storage.getItem("scoreSet"));
+  console.log(typeof storedScore);
+  storedScore.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  console.log(storedScore);
+
+  for (i = 0; i < storedScore.length; i++) {
+    highScoresListEl.appendChild(document.createElement("li"));
+    highScoresListEl.children[i].textContent = (i + 1) + ". " + storedScore[i]["initials"] + " score: " + storedScore[i]["score"];
+  }
+}
+
+getHighScores();

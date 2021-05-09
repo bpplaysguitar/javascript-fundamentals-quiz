@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-      <button id="btn-highscores" href="">View High Scores</button>
+      <a href="./scores.html">View High Scores</a>
       <h1>JavaScript Fundamentals Quiz</h1>
       <div id="timer">
         <p>Time: <span id="time-left">75</span></p>
@@ -32,18 +32,20 @@
           <button class="btn" id="choice-btn-4">Choice 4</button>
         </div>
       </main>
-
+      
       <div class="controls">
+        <div class="welcome-message"></div>
+        <div class="game-over-message hide">game over 
+          <a href="./index.html">Play Again?</a>
+        </div>
         <button id="start-btn" class="start-btn btn">Start</button>
       </div>
 
-      <div class="welcome-message"></div>
-      <form id = "score-form">
+      <form id = "score-form" class="hide">
         <label>Enter initials</label>
         <input type="text" id="user-initials">
         <button id ="submit-btn">Submit</button>
       </form>
-        <a href="./index.html" id="play-again">Play again</a>
       </div>  
       </div>
     </div>
