@@ -9,8 +9,6 @@
 :root {
   --correct:hsl(120, 43%, 24%);
   --incorrect:hsl(0, 53%, 69%);
-  --high-score:hsl(26, 65%, 92%);
-  --high-score-hover:hsl(21, 43%, 60%);
   --choice-btn:hsl(75, 10%, 40%);
   --choice-btn-hv:hsl(75, 10%, 35%);
   --high-score-list-col-1:#b7b7a4;
@@ -31,63 +29,7 @@ body {
   font-size: 1.15rem;
 }
 
-.container {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 60%;
-  width:60%;
-  max-width: 70%;
-  background-color:var(--container-bg);
-  border-radius: 30px;
-  padding: 40px;
-  border: 5px solid black;
-  align-items: center;
-  text-align: center;
-  box-shadow: 3px 4px 4px rgb(53, 53, 53);
-}
-
-
-.btn {
-  background-color:var(--choice-btn);
-  border-radius: 5px;
-  padding:10px 10px;
-  outline: none;
-  cursor: pointer;
-  font-weight: 600;
-  margin: 5px;
-  font-size: 1.05rem;
-  box-shadow: 3px 2px 2px grey;
-  color: hsl(27, 66%, 98%);
-}
-
-.btn:hover {
-  border-color: #000;
-  transform: scale(1.03);
-  transform: .3s all ease;
-  background-color: var(--choice-btn-hv);
-}
-
-.btn-disabled {
-  pointer-events: none;
-}
-
-.start-btn {
-  font-weight: bold;
-  padding:10px 20px;
-  font-size: 1.5rem;
-  margin: 20px;
-}
-
-.controls {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  }
-
+/* header  */
 header {
   display: flex;
   width: 100%;
@@ -97,11 +39,12 @@ header {
   background-color: var(--header);
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0px 3px 5px #000;
 }
 
 header h1 {
   font-size: 2rem;
-  color: #fff;
+  color: hsl(27, 66%, 98%);
   margin: auto;
   font-weight: 600;
 }
@@ -123,6 +66,15 @@ header h1 {
   transition: .2s all ease;
 }
 
+#timer {
+  position:absolute;
+  right:5%;
+  background-color: var(--container-bg);
+  padding: 15px 20px;
+  border-radius: 15px; 
+  box-shadow: 2px 2px 2px #000;
+}
+
 #play-again {
   position:absolute;
   left:5%;
@@ -132,7 +84,6 @@ header h1 {
   cursor: pointer;
   text-decoration: none;
   color: #000;
-  font-weight: 600;
   box-shadow: 2px 2px 2px #000;
 }
 
@@ -141,37 +92,59 @@ header h1 {
   transition: .2s all ease;
 }
 
-#play-again-score-screen {
-  background-color: var(--container-bg);
-  padding: 15px 20px;
-  border-radius: 15px;
+
+/* main part of the game  */
+.container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60%;
+  width:60%;
+  max-width: 70%;
+  background-color:var(--container-bg);
+  border-radius: 30px;
+  padding: 40px;
+  border: 5px solid black;
+  align-items: center;
+  text-align: center;
+  box-shadow: 3px 4px 4px rgb(53, 53, 53);
+}
+
+.btn {
+  background-color:var(--choice-btn);
+  border-radius: 5px;
+  padding:10px 10px;
+  outline: none;
   cursor: pointer;
-  text-decoration: none;
-  color: #000;
-  margin: 20px;
-  font-size: 1.15rem;
   font-weight: 600;
-  box-shadow: 2px 2px 2px #000;
+  margin: 5px;
+  font-size: 1.05rem;
+  box-shadow: 3px 2px 2px grey;
+  color: hsl(27, 66%, 98%);
 }
 
-#play-again-score-screen:hover {
-  background-color: var(--container-bg-hv);
-  transition: .2s all ease;
+.btn:hover {
+  border-color: #000;
+  transform: scale(1.03);
+  transform: .3s all ease;
+  background-color: var(--choice-btn-hv);
 }
 
-#play-again-link {
-  color: var(--choice-btn);
-  font-weight: 500;
+.start-btn {
+  font-weight: bold;
+  padding:10px 20px;
+  font-size: 1.5rem;
+  margin: 20px;
 }
 
-#timer {
-  position:absolute;
-  right:5%;
-  background-color: var(--container-bg);
-  padding: 15px 20px;
-  border-radius: 15px; 
-  box-shadow: 2px 2px 2px #000;
-}
+.controls {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
 
 #answer-buttons {
   margin: 20px;
@@ -205,49 +178,14 @@ header h1 {
   transform: translateY(30px);
 }
 
-#high-scores-container {
-  display: flex;
-  width: 30%;
-  margin: auto;
-  flex-direction: column;
-  font-size: 1rem;
-  text-align: center;
-  background-color: var(--body-bg);
-}
-
-#high-scores-container h1 {
-  color: #fff;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 2px grey;
-  margin-top: 130px;
-}
-
-#high-scores-list {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 20px;
-  border: 7px solid var(--header);
-  border-radius: 20px;
-  padding: 40px;
+/* game over  */
+#play-again-link {
+  color: var(--choice-btn);
   font-weight: 500;
-  background-color: var(--container-bg);
 }
 
-#high-scores-list li {
-  padding: 10px;
-  color: white;
-}
 
-#high-scores-list li:first-child {
-  border-radius: 10px 10px 0 0;
-}
-
-#high-scores-list li:last-child {
-  border-radius: 0 0 10px 10px;
-}
-
+/* entering your initial  */
 #label {
   margin-right:8px;
 }
@@ -274,6 +212,72 @@ header h1 {
   transform: scale(1.03);
 } 
 
+
+/* high scores page  */
+#high-scores-container {
+  display: flex;
+  width: 30%;
+  margin: auto;
+  flex-direction: column;
+  font-size: 1rem;
+  text-align: center;
+  background-color: var(--body-bg);
+}
+
+#high-scores-container h1 {
+  color: hsl(27, 66%, 98%);
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 2px grey;
+  margin-top: 130px;
+}
+
+#high-scores-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 7px solid var(--header);
+  border-radius: 20px;
+  padding: 40px;
+  font-weight: 500;
+  background-color: var(--container-bg);
+}
+
+#high-scores-list li {
+  padding: 10px;
+  color: hsl(27, 66%, 98%);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+#high-scores-list li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+#high-scores-list li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+#play-again-score-screen {
+  background-color: var(--container-bg);
+  padding: 15px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  margin: 20px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 2px #000;
+}
+
+#play-again-score-screen:hover {
+  background-color: var(--container-bg-hv);
+  transition: .2s all ease;
+}
+
+/* general use hide class */
 .hide {
   display: none;
 }
