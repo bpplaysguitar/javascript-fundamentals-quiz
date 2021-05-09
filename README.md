@@ -7,7 +7,7 @@ https://bpplaysguitar.github.io/javascript-fundamentals-quiz/
 
 ![GitHub top language](https://img.shields.io/github/languages/top/bpplaysguitar/javascript-fundamentals-quiz?color=%23ffb3ba&logo=GitHub&logoColor=%23ffb3ba)
 
-![GitHub]https://img.shields.io/github/license/bpplaysguitar/javascript-fundamentals-quiz?color=%23ffffba&logo=GitHub&logoColor=%23ffffba
+![GitHub](https://img.shields.io/github/license/bpplaysguitar/javascript-fundamentals-quiz?color=%23ffffba&logo=GitHub&logoColor=%23ffffba)
 
 ## Description
 This assignment had us creating a short multiple-choice quiz on JavaScript fundamentals. The subject matter, though, was not so important. The coding to bring these questions to life in quiz form, and to use local storage to store high scores and display them on a high scores page, was the real challenge. And it was a challenging project. I implemented a lot JavaScript I had not used before. After building this project, I can see how local storage is a very useful tool all over the web.
