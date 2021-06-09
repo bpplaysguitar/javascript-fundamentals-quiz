@@ -1,6 +1,7 @@
 # javascript-fundamentals-quiz
-
-JavaScript Fundamentals Quiz
+Brian Palay <br>
+612-202-5710 <br>
+brianpalay@gmail.com
 
 See the project live here:
 https://bpplaysguitar.github.io/javascript-fundamentals-quiz/
